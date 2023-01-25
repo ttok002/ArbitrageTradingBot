@@ -1,0 +1,73 @@
+LINE 159
+
+let result = await _routerPath[0].getAmountsIn(ethers.utils.parseUnits('100000', 'ether'), [_token0.address, _token1.address])
+
+let result = await _routerPath[0].getAmountsIn(ethers.utils.parseUnits('0.25', 'ether'), [_token0.address, _token1.address])
+
+
+NODE BOT CONSOLE
+
+pisarzp@Holly:/mnt/c/pr0/2023trading_bot_hardhat-master$ node bot.js
+Listening on 5000
+
+uPair Address: 0x811beEd0119b4AfCE20D2583EB608C6F7AF1954f
+sPair Address: 0x24D3dD4a62e29770cf98810b09F89D3A90279E7a
+
+Waiting for swap event...
+Swap Initiated on Uniswap, Checking Price...
+
+Current Block: 16484963
+-----------------------------------------
+UNISWAP   | SHIB/WETH    | 68868478429913
+SUSHISWAP | SHIB/WETH    | 138938585
+
+Percentage Difference: 49567468.60%
+
+Determining Direction...
+
+Potential Arbitrage Direction:
+
+Buy      -->     Uniswap
+Sell     -->     Sushiswap
+
+Determining Profitability...
+
+Reserves on 0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F
+SHIB: 113581113
+WETH: 0.817491503871019544
+
+Get Amounts In 1654213993933,113581113071392212944426548
+Get Amounts Out 113581113071392212944426548,408131712248075355
+Estimated amount of WETH needed to buy enough Shib on Uniswap           | 0.000001654213993933
+Estimated amount of WETH returned after swapping SHIB on Sushiswap      | 0.408131712248075355
+
+┌─────────────────────┬───────────────────────────┐
+│       (index)       │          Values           │
+├─────────────────────┼───────────────────────────┤
+│ ETH Balance Before  │ '9999.923324453354939464' │
+│  ETH Balance After  │     9999.887324453355     │
+│   ETH Spent (gas)   │           0.036           │
+│          -          │                           │
+│ WETH Balance BEFORE │             0             │
+│ WETH Balance AFTER  │    0.40813005803415064    │
+│  WETH Gained/Lost   │    0.40813005803415064    │
+│  Total Gained/Lost  │    0.37213005803415067    │
+└─────────────────────┴───────────────────────────┘
+
+Attempting Arbitrage...
+
+Trade Complete:
+
+┌─────────────────────┬───────────────────────────┐
+│       (index)       │          Values           │
+├─────────────────────┼───────────────────────────┤
+│ ETH Balance Before  │ '9999.923324453354939464' │
+│  ETH Balance After  │ '9999.912228404709310957' │
+│   ETH Spent (gas)   │  '0.011096048644653056'   │
+│          -          │                           │
+│ WETH Balance BEFORE │           '0.0'           │
+│ WETH Balance AFTER  │  '0.408130058034150657'   │
+│  WETH Gained/Lost   │   '0.40813005803415066'   │
+│  Total Gained/Lost  │ '0.3970340093894976 ETH'  │
+└─────────────────────┴───────────────────────────┘
+^C
